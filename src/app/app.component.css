@@ -124,16 +124,15 @@ li {
 }
 
 @import url(//db.onlinewebfonts.com/c/f3def4d2879393a37e87d5074c746e79?family=Steinbeck);
-/*
-@font-face {
-  font-family: "Steinbeck";
-  src: url(../fonts/Steinbeck\ Demo\ Regular.otf);
-}
 
 @font-face {
+  font-family: "Steinbeck";
+  src: url(../../src/assets/fonts/SteinbeckReg/SteinbeckReg.ttf);
+}
+@font-face {
   font-family: "circular";
-  src: url(../fonts/CircularStd-Medium.ttf);
-}*/
+  src: url(../../src/assets/fonts/CircularStd-Medium.ttf);
+}
 
 a {
   text-decoration: none;
