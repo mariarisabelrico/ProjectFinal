@@ -1,32 +1,27 @@
 import { NgModule } from '@angular/core';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { LoginComponent } from './pages/login/login.component';
-import { LandingComponent } from './pages/landing/landing.component';
-import { AdminNtComponent } from './pages/admin-nt/admin-nt.component';
-import { HomeComponent } from './pages/home/home.component';
-import { AjustesComponent } from './pages/ajustes/ajustes.component';
-import { MainComponent } from './core/components/main/main.component';
+import { HomeComponent } from './home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegisterComponent,
-    LoginComponent,
-    LandingComponent,
-    AdminNtComponent,
-    HomeComponent,
-    AjustesComponent,
-    MainComponent
-  ],
+  declarations: [AppComponent, HomeComponent],
+
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
