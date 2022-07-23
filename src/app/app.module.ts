@@ -9,13 +9,20 @@ import { HomeComponent } from './pages/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { HeaderComponent } from './core/components/header/header.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export function playerFactory() {
   return player;
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent,FooterComponent,HeaderComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    FooterComponent,
+    HeaderComponent,
+  ],
 
   imports: [
     BrowserModule,
