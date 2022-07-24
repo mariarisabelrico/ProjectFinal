@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 export function playerFactory() {
   return player;
@@ -22,6 +23,7 @@ export function playerFactory() {
     LoginComponent,
     FooterComponent,
     HeaderComponent,
+    RegistroComponent
   ],
 
   imports: [
