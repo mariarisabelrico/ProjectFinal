@@ -130,7 +130,7 @@ $background-color_7: rgba(204, 200, 255, 0.212);
   }
 }
 
-@media all and (min-width: 599px) and (max-width: 768px) {
+@media all and (min-width: 599px) {
   .menu_mob {
     width: 100%;
     display: none;
@@ -143,8 +143,25 @@ $background-color_7: rgba(204, 200, 255, 0.212);
   }
 }
 
-// De AQUI PA ARRIBA
-@media all and (min-width: 768px) and (max-width: 959px) {
+/*movil*/
+/*Portrait*/
+/*Default*/
+@media (max-width: 575px) and (orientation: portrait) {
+  body {
+    background: green;
+  }
+}
+/*landscape*/
+@media (min-width: 576px) and (max-width: 991) and (orientation: landscape) {
+  body {
+    background: black;
+  }
+}
+/*fin movil*/
+// kljlkjlkjljljj 5776fdxggggggggggggggggggggggggdddddddddddddddddddd
+/*Tablet*/
+/*Portrait*/
+@media (min-width: 576px) and (max-width: 990px) and (orientation: portrait) {
   header {
     width: 100%;
     height: 13vh;
@@ -175,25 +192,54 @@ $background-color_7: rgba(204, 200, 255, 0.212);
     width: 200px;
   }
   .menu_desk {
-    width: 40%;
-    height: 38px;
-    margin-top: 48px;
-    margin-left: 15px;
-
-    display: flex;
-    justify-content: flex-end;
+    visibility: hidden;
     a {
+      margin-top: 10px;
       font-size: 16px;
       font-weight: 500;
-      padding: 15px;
+      padding: 5px;
       color: $color_1;
       transition: all 0.5s;
       font-family: $font-family_1;
-      font-weight: 500;
       &:hover {
         color: $color_2;
       }
     }
+  }
+
+  .menu_mob {
+    display: block;
+  }
+  .hamb {
+    display: block;
+  }
+  .hamb-line {
+    display: block;
+  }
+
+  .menu_mob {
+    width: 100%;
+    display: none;
+    height: 29%;
+    position: fixed;
+    top: 85px;
+    right: 0.5px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+
+  .mob a {
+    display: block;
+    padding: 30.5px;
+    border: thin solid rgb(247, 245, 245);
+    font-size: 16px;
+    color: black;
+    font-family: var(--circular);
+  }
+
+  .menu_mob {
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
   }
 
   .box_buttons {
@@ -279,10 +325,11 @@ $background-color_7: rgba(204, 200, 255, 0.212);
   }
 }
 
-@media all and (min-width: 960px) and (max-width: 1199px) {
+/*landscape*/
+@media (min-width: 991px) and (max-width: 1199px) and (orientation: landscape) {
   header {
     width: 100%;
-    height: 13vh;
+    height: 14vh;
     position: fixed;
     background-color: $background-color_1;
     top: 0px;
@@ -293,7 +340,8 @@ $background-color_7: rgba(204, 200, 255, 0.212);
     -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
     box-shadow: 0px 6px 15px 6px #c7c7c731;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   .aline {
     width: 140px;
@@ -303,40 +351,39 @@ $background-color_7: rgba(204, 200, 255, 0.212);
       margin-left: 7%;
     }
   }
-  .logo {
-    margin-left: 5px;
-  }
+
   .logo_picture {
-    margin-left: 25px;
     width: 200px;
   }
   .menu_desk {
-    width: 35%;
+    width: 50%;
     height: 38px;
-    margin: 48px;
+    margin-top: 48px;
     display: flex;
     justify-content: flex-end;
+
     a {
-      font-size: 16px;
+      font-size: 24px;
       font-weight: 500;
-      margin-left: 40px;
+      margin-right: 28px;
       color: $color_1;
       transition: all 0.5s;
       font-family: $font-family_1;
-      font-weight: 500;
       &:hover {
         color: $color_2;
       }
     }
   }
   .box_buttons {
-    margin-top: 4px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: top;
     button {
-      font-size: 15px;
+      font-size: 16px;
       display: flex;
+      flex-wrap: wrap;
+      margin-right: 20px;
       justify-content: center;
       align-items: center;
     }
@@ -346,7 +393,7 @@ $background-color_7: rgba(204, 200, 255, 0.212);
     height: 20px;
     background-color: $background-color_2;
     margin-top: 45px;
-    margin-right: 50px;
+    margin-right: 10px;
     font-family: $font-family_2;
     border: none;
     a {
@@ -411,8 +458,10 @@ $background-color_7: rgba(204, 200, 255, 0.212);
     }
   }
 }
+/*fin tablet*/
 
-@media all and (min-width: 1200px) and (max-width: 1919px) {
+/* Tamaño pantallas Escritorio inferior (1024)  superior 991*/
+@media all and (min-width: 991px) and (max-width: 1023px) {
   header {
     width: 100%;
     height: 14vh;
@@ -426,7 +475,8 @@ $background-color_7: rgba(204, 200, 255, 0.212);
     -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
     box-shadow: 0px 6px 15px 6px #c7c7c731;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   .aline {
     width: 140px;
@@ -436,27 +486,24 @@ $background-color_7: rgba(204, 200, 255, 0.212);
       margin-left: 7%;
     }
   }
-  .logo {
-    margin-right: 15%;
-  }
+
   .logo_picture {
-    margin-left: 25px;
     width: 200px;
   }
   .menu_desk {
     width: 50%;
     height: 38px;
-    margin: 48px;
+    margin-top: 48px;
     display: flex;
     justify-content: flex-end;
+
     a {
       font-size: 24px;
       font-weight: 500;
-      margin-left: 50px;
+      margin-right: 28px;
       color: $color_1;
       transition: all 0.5s;
       font-family: $font-family_1;
-      font-weight: 500;
       &:hover {
         color: $color_2;
       }
@@ -470,6 +517,8 @@ $background-color_7: rgba(204, 200, 255, 0.212);
     button {
       font-size: 16px;
       display: flex;
+      flex-wrap: wrap;
+      margin-right: 20px;
       justify-content: center;
       align-items: center;
     }
@@ -479,7 +528,140 @@ $background-color_7: rgba(204, 200, 255, 0.212);
     height: 20px;
     background-color: $background-color_2;
     margin-top: 45px;
-    margin-right: 50px;
+    margin-right: 10px;
+    font-family: $font-family_2;
+    border: none;
+    a {
+      font-size: 20px;
+      color: $color_1;
+      transition: all 0.2s;
+      &:hover {
+        color: $color_3;
+        transition: all 0.2s;
+      }
+    }
+  }
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: $color_1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-button {
+    background-image: linear-gradient(
+      to right,
+      #6363d3 0%,
+      #1e287c 51%,
+      #5454ee 100%
+    );
+    text-align: center;
+    font-family: $font-family_2;
+    transition: 0.5s;
+    border-radius: 35px !important;
+    background-size: 200% auto;
+    color: $color_4;
+    display: block;
+    cursor: pointer;
+    border-bottom: 5px solid rgb(148, 138, 243);
+    border-right: 5px solid rgb(148, 138, 243);
+    border-left: 5px solid rgb(148, 138, 243);
+    border-top: 5px solid rgb(148, 138, 243);
+    &:hover {
+      background-position: right center;
+      color: $color_5;
+      text-decoration: none;
+    }
+    a {
+      color: $color_4;
+    }
+  }
+}
+
+/* Tamaño pantallas Escritorio superior (1024) */
+@media all and (min-width: 1024px) {
+  header {
+    width: 100%;
+    height: 14vh;
+    position: fixed;
+    background-color: $background-color_1;
+    top: 0px;
+    left: 0px;
+    padding: 1%;
+    transition: all 0.5s;
+    z-index: 3;
+    -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
+    box-shadow: 0px 6px 15px 6px #c7c7c731;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .aline {
+    width: 140px;
+    height: 45px;
+    margin-top: 9%;
+    i {
+      margin-left: 7%;
+    }
+  }
+
+  .logo_picture {
+    width: 200px;
+  }
+  .menu_desk {
+    width: 50%;
+    height: 38px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      font-size: 24px;
+      font-weight: 500;
+      margin-right: 28px;
+      color: $color_1;
+      transition: all 0.5s;
+      font-family: $font-family_1;
+      &:hover {
+        color: $color_2;
+      }
+    }
+  }
+  .box_buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    button {
+      font-size: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .log-in {
+    width: 70px;
+    height: 20px;
+    background-color: $background-color_2;
+    margin-top: 45px;
+    margin-right: 10px;
     font-family: $font-family_2;
     border: none;
     a {
