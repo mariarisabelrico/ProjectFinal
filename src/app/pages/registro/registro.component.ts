@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registro',
@@ -6,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
+  valorparametre = '';
+  usuarios = null;
+
+  nuevoUsuario = {
+    idUsuario: 0,
+    nombre: "",
+    correo: "",
+    contraseya: "",
+  }
 
   constructor() { }
 
