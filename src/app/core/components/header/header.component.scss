@@ -17,6 +17,14 @@ $background-color_5: rgb(224, 218, 236);
 $background-color_6: rgba(236, 233, 233, 0.295);
 $background-color_7: rgba(204, 200, 255, 0.212);
 
+@mixin menu_desk {
+  width: 50%;
+  height: 40px;
+  margin-top: 48px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -41,47 +49,45 @@ a {
 
 header {
   width: 100%;
-  height: 18vh;
+  height: 16vh;
   position: fixed;
   background-color: $background-color_1;
   top: 0px;
   left: 0px;
-  padding: 1%;
+  padding: 0.5em;
   transition: all 0.5s;
   z-index: 3;
   -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
   box-shadow: 0px 6px 15px 6px #c7c7c731;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  align-items: stretch;
 }
-
 .aline {
-  width: 140px;
+  width: 120px;
   height: 45px;
-  margin-top: 9%;
+  margin-top: 7%;
   i {
-    margin-left: 7%;
+    margin-left: 3%;
   }
 }
-
 .logo_picture {
-  margin-left: 27%;
-  width: 200px;
+  width: 120px;
 }
+
 .menu_desk {
   display: none;
 }
 
 .box_buttons {
-  margin-top: 10px;
   display: flex;
-  justify-content: center;
-  align-items: top;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   button {
     font-size: 16px;
     display: flex;
     flex-wrap: wrap;
-    margin-right: 10px;
     justify-content: center;
     align-items: center;
   }
@@ -91,11 +97,10 @@ header {
   height: 20px;
   background-color: $background-color_2;
   margin-top: 30px;
-  margin-right: 10px;
   font-family: $font-family_2;
   border: none;
   a {
-    font-size: 20px;
+    font-size: 16px;
     color: $color_1;
     transition: all 0.2s;
     &:hover {
@@ -104,7 +109,6 @@ header {
     }
   }
 }
-
 .main-button {
   background-image: linear-gradient(
     to right,
@@ -133,42 +137,34 @@ header {
     color: $color_4;
   }
 }
-
 /* Nav menu */
 .menu_mob {
   width: 100%;
-  display: none;
-  height: 29%;
+  display: inline;
+  height: 45%;
   position: fixed;
   top: 85px;
   right: 0.5px;
   background-color: #ffffff;
   overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
 }
-
 .mob a {
   display: block;
-  padding: 30px;
+  padding: 15px;
   border: thin solid rgb(247, 245, 245);
   font-size: 26px;
   color: $color_1;
   font-family: $font-family_1;
 }
-
-.menu_mob {
-  max-height: 0;
-  transition: max-height 0.5s ease-out;
-}
-
 /* Menu Icon */
 .hamb {
   cursor: pointer;
-  display: none;
-  padding: 15px;
-  margin-left: 0px;
-  margin-top: 19px;
+  display: block;
+  padding: 4px;
+  margin-right: 10px;
 }
-
 .hamb-line {
   background: rgb(128, 108, 216);
   display: block;
@@ -177,7 +173,6 @@ header {
   position: relative;
   width: 24px;
 }
-
 .hamb-line::before,
 .hamb-line::after {
   background: rgb(128, 108, 216);
@@ -187,687 +182,122 @@ header {
   transition: all 0.2s ease-out;
   width: 100%;
 }
-
 .hamb-line::before {
   top: 5px;
 }
-
 .hamb-line::after {
   top: -5px;
 }
-
 .side-menu {
   display: none;
 }
-
 /* Toggle menu icon */
-
 .side-menu:checked ~ nav {
   max-height: 100%;
 }
-
 .side-menu:checked ~ .hamb .hamb-line {
   background: transparent;
 }
-
 .side-menu:checked ~ .hamb .hamb-line::before {
   transform: rotate(-45deg);
   top: 0;
 }
-
 .side-menu:checked ~ .hamb .hamb-line::after {
   transform: rotate(45deg);
   top: 0;
-}
-
-.menu_mob {
-  display: block;
-  width: 100%;
-  height: 29%;
-  position: fixed;
-  top: 130px;
-  right: 0.5px;
-  background-color: #ffffff;
-  overflow: hidden;
-}
-.hamb {
-  display: block;
 }
 .hamb-line {
   display: block;
 }
 
-@media only screen and (max-width: 360px) {
+@media (min-width: 360px) and (max-width: 400px) {
   header {
-    width: 100%;
-    height: 18vh;
-    position: fixed;
-    background-color: $background-color_1;
-    top: 0px;
-    left: 0px;
-    padding: 1%;
-    transition: all 0.5s;
-    z-index: 3;
-    -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
-    box-shadow: 0px 6px 15px 6px #c7c7c731;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
-
-  .aline {
-    width: 100px;
-    height: 40px;
-    margin-top: 9%;
-    i {
-      margin-left: 7%;
-    }
-  }
-
-  .logo_picture {
+  .hamb {
+    padding: 0px;
+    margin-right: 10px;
     margin-left: 10px;
-    width: 100px;
-  }
-  .menu_desk {
-    display: none;
-  }
-
-  .box_buttons {
-    margin-top: 10px;
-    display: flex;
-    align-items: top;
-    button {
-      font-size: 12px;
-      display: flex;
-    }
-  }
-  .log-in {
-    width: 50px;
-    height: 20px;
-    background-color: $background-color_2;
-    margin-top: 30px;
-    font-family: $font-family_2;
-    border: none;
-    a {
-      font-size: 16px;
-      color: $color_1;
-      transition: all 0.2s;
-      &:hover {
-        color: $color_3;
-        transition: all 0.2s;
-      }
-    }
-  }
-
-  .main-button {
-    background-image: linear-gradient(
-      to right,
-      #6363d3 0%,
-      #1e287c 51%,
-      #5454ee 100%
-    );
-    text-align: center;
-    font-family: $font-family_2;
-    transition: 0.5s;
-    border-radius: 35px;
-    background-size: 200% auto;
-    color: $color_4;
-    display: block;
-    cursor: pointer;
-    border-bottom: 5px solid rgb(148, 138, 243);
-    border-right: 5px solid rgb(148, 138, 243);
-    border-left: 5px solid rgb(148, 138, 243);
-    border-top: 5px solid rgb(148, 138, 243);
-    &:hover {
-      background-position: right center;
-      color: $color_5;
-      text-decoration: none;
-    }
-    a {
-      color: $color_4;
-    }
-  }
-  /* Nav menu */
-  .menu_mob {
-    width: 100%;
-    display: none;
-    height: 29%;
-    position: fixed;
-    top: 85px;
-    right: 0.5px;
-    background-color: #ffffff;
-    overflow: hidden;
-  }
-
-  .mob a {
-    display: block;
-    padding: 30px;
-    border: thin solid rgb(247, 245, 245);
-    font-size: 26px;
-    color: $color_1;
-    font-family: $font-family_1;
-  }
-
-  .menu_mob {
-    max-height: 0;
-    transition: max-height 0.5s ease-out;
-  }
-
-  /* Menu Icon */
-
-  .hamb {
-    cursor: pointer;
-    display: none;
-    padding: 15px;
-    margin-left: 0px;
-    margin-top: 19px;
-  }
-
-  .hamb-line {
-    background: rgb(128, 108, 216);
-    display: block;
-    height: 2px;
-    display: none;
-    position: relative;
-    width: 24px;
-  }
-
-  .hamb-line::before,
-  .hamb-line::after {
-    background: rgb(128, 108, 216);
-    content: "";
-    height: 100%;
-    position: absolute;
-    transition: all 0.2s ease-out;
-    width: 100%;
-  }
-
-  .hamb-line::before {
-    top: 5px;
-  }
-
-  .hamb-line::after {
-    top: -5px;
-  }
-
-  .side-menu {
-    display: none;
-  }
-
-  /* Toggle menu icon */
-
-  .side-menu:checked ~ nav {
-    max-height: 100%;
-  }
-
-  .side-menu:checked ~ .hamb .hamb-line {
-    background: transparent;
-  }
-
-  .side-menu:checked ~ .hamb .hamb-line::before {
-    transform: rotate(-45deg);
-    top: 0;
-  }
-
-  .side-menu:checked ~ .hamb .hamb-line::after {
-    transform: rotate(45deg);
-    top: 0;
-  }
-
-  .menu_mob {
-    display: block;
-    width: 100%;
-    height: 29%;
-    position: fixed;
-    top: 130px;
-    right: 0.5px;
-    background-color: #ffffff;
-    overflow: hidden;
-  }
-  .hamb {
-    display: block;
-  }
-  .hamb-line {
-    display: block;
+    margin-top: 5px;
   }
 }
-
-/*Mobile*/
-@media (min-width: 361px) and (max-width: 576px) {
+@media (min-width: 401px) and (max-width: 479px) {
   header {
-    width: 100%;
-    height: 18vh;
-    position: fixed;
-    background-color: $background-color_1;
-    top: 0px;
-    left: 0px;
-    padding: 1%;
-    transition: all 0.5s;
-    z-index: 3;
-    -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
-    box-shadow: 0px 6px 15px 6px #c7c7c731;
-    display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
-
-  .aline {
-    width: 140px;
-    height: 45px;
-    margin-top: 9%;
-    i {
-      margin-left: 7%;
-    }
-  }
-
   .logo_picture {
-    width: 150px;
-  }
-  .menu_desk {
-    display: none;
-  }
-
-  .box_buttons {
-    margin-top: 10px;
-    margin-left: 15px;
-    display: flex;
-    align-items: top;
-    button {
-      font-size: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  .log-in {
-    width: 70px;
-    height: 20px;
-    background-color: $background-color_2;
-    margin-top: 30px;
-    margin-right: 3px;
-    font-family: $font-family_2;
-    border: none;
-    a {
-      font-size: 18px;
-      color: $color_1;
-      transition: all 0.2s;
-      &:hover {
-        color: $color_3;
-        transition: all 0.2s;
-      }
-    }
-  }
-
-  .main-button {
-    background-image: linear-gradient(
-      to right,
-      #6363d3 0%,
-      #1e287c 51%,
-      #5454ee 100%
-    );
-    text-align: center;
-    font-family: $font-family_2;
-    transition: 0.5s;
-    border-radius: 35px !important;
-    background-size: 200% auto;
-    color: $color_4;
-    display: block;
-    cursor: pointer;
-    border-bottom: 5px solid rgb(148, 138, 243);
-    border-right: 5px solid rgb(148, 138, 243);
-    border-left: 5px solid rgb(148, 138, 243);
-    border-top: 5px solid rgb(148, 138, 243);
-    &:hover {
-      background-position: right center;
-      color: $color_5;
-      text-decoration: none;
-    }
-    a {
-      color: $color_4;
-    }
-  }
-  /* Nav menu */
-  .menu_mob {
-    width: 100%;
-    display: none;
-    height: 29%;
-    position: fixed;
-    top: 85px;
-    right: 0.5px;
-    background-color: #ffffff;
-    overflow: hidden;
-  }
-
-  .mob a {
-    display: block;
-    padding: 30px;
-    border: thin solid rgb(247, 245, 245);
-    font-size: 26px;
-    color: $color_1;
-    font-family: $font-family_1;
-  }
-
-  .menu_mob {
-    max-height: 0;
-    transition: max-height 0.5s ease-out;
-  }
-
-  /* Menu Icon */
-
-  .hamb {
-    cursor: pointer;
-    display: none;
-    padding: 15px;
-    margin-left: 0px;
-    margin-top: 19px;
-  }
-
-  .hamb-line {
-    background: rgb(128, 108, 216);
-    display: block;
-    height: 2px;
-    display: none;
-    position: relative;
-    width: 24px;
-  }
-
-  .hamb-line::before,
-  .hamb-line::after {
-    background: rgb(128, 108, 216);
-    content: "";
-    height: 100%;
-    position: absolute;
-    transition: all 0.2s ease-out;
-    width: 100%;
-  }
-
-  .hamb-line::before {
-    top: 5px;
-  }
-
-  .hamb-line::after {
-    top: -5px;
-  }
-
-  .side-menu {
-    display: none;
-  }
-
-  /* Toggle menu icon */
-
-  .side-menu:checked ~ nav {
-    max-height: 100%;
-  }
-
-  .side-menu:checked ~ .hamb .hamb-line {
-    background: transparent;
-  }
-
-  .side-menu:checked ~ .hamb .hamb-line::before {
-    transform: rotate(-45deg);
-    top: 0;
-  }
-
-  .side-menu:checked ~ .hamb .hamb-line::after {
-    transform: rotate(45deg);
-    top: 0;
-  }
-
-  .menu_mob {
-    display: block;
-    width: 100%;
-    height: 29%;
-    position: fixed;
-    top: 130px;
-    right: 0.5px;
-    background-color: #ffffff;
-    overflow: hidden;
+    margin-left: 0.2em;
+    margin-right: 1em;
+    width: 170px;
   }
   .hamb {
-    display: block;
-  }
-  .hamb-line {
-    display: block;
+    padding: 0px;
+    margin-right: 10px;
+    margin-left: 40px;
+    margin-top: 5px;
   }
 }
 
 /*Tablet*/
-@media (min-width: 577px) and (max-width: 990px) {
+@media (min-width: 480px) and (max-width: 550px) {
   header {
     width: 100%;
-    height: 18vh;
+    height: 16vh;
     position: fixed;
-    background-color: $background-color_1;
-    top: 0px;
-    left: 0px;
-    padding: 1%;
-    transition: all 0.5s;
-    z-index: 3;
-    -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
-    box-shadow: 0px 6px 15px 6px #c7c7c731;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-evenly;
+    align-items: stretch;
   }
-
-  .aline {
-    width: 140px;
-    height: 45px;
-    margin-top: 9%;
-    i {
-      margin-left: 7%;
-    }
+  .hamb {
+    margin-right: 35px;
   }
 
   .logo_picture {
-    margin-left: 27%;
     width: 200px;
-  }
-  .menu_desk {
-    visibility: hidden;
-  }
-
-  .box_buttons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    button {
-      font-size: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  .log-in {
-    width: 70px;
-    height: 20px;
-    background-color: $background-color_2;
-    margin-top: 30px;
-    margin-right: 10px;
-    font-family: $font-family_2;
-    border: none;
-    a {
-      font-size: 20px;
-      color: $color_1;
-      transition: all 0.2s;
-      &:hover {
-        color: $color_3;
-        transition: all 0.2s;
-      }
-    }
-  }
-
-  .main-button {
-    background-image: linear-gradient(
-      to right,
-      #6363d3 0%,
-      #1e287c 51%,
-      #5454ee 100%
-    );
-    text-align: center;
-    font-family: $font-family_2;
-    transition: 0.5s;
-    border-radius: 35px;
-    background-size: 200% auto;
-    color: $color_4;
-    display: block;
-    cursor: pointer;
-    border-bottom: 5px solid rgb(148, 138, 243);
-    border-right: 5px solid rgb(148, 138, 243);
-    border-left: 5px solid rgb(148, 138, 243);
-    border-top: 5px solid rgb(148, 138, 243);
-    &:hover {
-      background-position: right center;
-      color: $color_5;
-      text-decoration: none;
-    }
-    a {
-      color: $color_4;
-    }
-
-    /* Nav menu */
-    .menu_mob {
-      width: 100%;
-      display: none;
-      height: 29%;
-      position: fixed;
-      top: 85px;
-      right: 0.5px;
-      background-color: $background-color_1;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.5s ease-out;
-    }
-    .mob {
-      a {
-        display: block;
-        padding: 30px;
-        border: thin solid rgb(247, 245, 245);
-        font-size: 26px;
-        color: $color_1;
-        font-family: $font-family_1;
-      }
-    }
-
-    /* Menu Icon */
-    .hamb {
-      cursor: pointer;
-      display: none;
-      padding: 15px;
-      margin-left: 0px;
-      margin-top: 19px;
-    }
-
-    .hamb-line {
-      background: rgb(128, 108, 216);
-      display: block;
-      height: 2px;
-      display: none;
-      position: relative;
-      width: 24px;
-    }
-
-    .hamb-line::before,
-    .hamb-line::after {
-      background: rgb(128, 108, 216);
-      content: "";
-      height: 100%;
-      position: absolute;
-      transition: all 0.2s ease-out;
-      width: 100%;
-    }
-
-    .hamb-line::before {
-      top: 5px;
-    }
-
-    .hamb-line::after {
-      top: -5px;
-    }
-
-    .side-menu {
-      display: none;
-    }
-
-    /* Toggle menu icon */
-    .side-menu:checked ~ nav {
-      max-height: 100%;
-    }
-
-    .side-menu:checked ~ .hamb .hamb-line {
-      background: transparent;
-    }
-
-    .side-menu:checked ~ .hamb .hamb-line::before {
-      transform: rotate(-45deg);
-      top: 0;
-    }
-
-    .side-menu:checked ~ .hamb .hamb-line::after {
-      transform: rotate(45deg);
-      top: 0;
-    }
-
-    .menu_mob {
-      display: block;
-      width: 100%;
-      height: 29%;
-      position: fixed;
-      top: 130px;
-      right: 0.5px;
-      background-color: #ffffff;
-      overflow: hidden;
-    }
-    .hamb {
-      display: block;
-    }
-    .hamb-line {
-      display: block;
-    }
   }
 }
 
-/*landscape*/
-@media (min-width: 991px) and (max-width: 1023px) and (orientation: landscape) {
+@media (min-width: 551px) and (max-width: 650px) {
   header {
-    width: 100%;
-    height: 14vh;
-    position: fixed;
-    background-color: $background-color_1;
-    top: 0px;
-    left: 0px;
-    padding: 1%;
-    transition: all 0.5s;
-    z-index: 3;
-    -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
-    box-shadow: 0px 6px 15px 6px #c7c7c731;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 1em;
     justify-content: space-around;
   }
-  .aline {
-    width: 140px;
-    height: 45px;
-    margin-top: 9%;
-    i {
-      margin-left: 7%;
-    }
+  .box_buttons {
+    margin-left: 10em;
   }
+  .hamb {
+    padding: 10px;
+    margin-right: 30px;
+  }
+}
 
+@media (min-width: 651px) and (max-width: 800px) {
+  header {
+    padding: 1em;
+    justify-content: space-around;
+  }
+  .box_buttons {
+    margin-left: 10em;
+  }
+  .hamb {
+    padding: 10px;
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1013px) {
   .logo_picture {
+    margin-left: 0;
     width: 200px;
   }
+  .hamb {
+    display: none;
+  }
   .menu_desk {
-    width: 50%;
-    height: 38px;
-    margin-top: 48px;
-    display: flex;
-    justify-content: flex-end;
-
+    @include menu_desk;
     a {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 500;
       margin-right: 28px;
       color: $color_1;
@@ -880,242 +310,30 @@ header {
   }
   .box_buttons {
     margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    button {
-      font-size: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: 20px;
-      justify-content: center;
-      align-items: center;
-    }
+    align-items: baseline;
   }
   .log-in {
-    width: 70px;
-    height: 20px;
-    background-color: $background-color_2;
-    margin-top: 45px;
-    margin-right: 10px;
-    font-family: $font-family_2;
-    border: none;
     a {
-      font-size: 20px;
-      color: $color_1;
-      transition: all 0.2s;
-      &:hover {
-        color: $color_3;
-        transition: all 0.2s;
-      }
-    }
-  }
-
-  .main-button {
-    background-image: linear-gradient(
-      to right,
-      #6363d3 0%,
-      #1e287c 51%,
-      #5454ee 100%
-    );
-    text-align: center;
-    font-family: $font-family_2;
-    transition: 0.5s;
-    border-radius: 35px !important;
-    background-size: 200% auto;
-    color: $color_4;
-    display: block;
-    cursor: pointer;
-    border-bottom: 5px solid rgb(148, 138, 243);
-    border-right: 5px solid rgb(148, 138, 243);
-    border-left: 5px solid rgb(148, 138, 243);
-    border-top: 5px solid rgb(148, 138, 243);
-    &:hover {
-      background-position: right center;
-      color: $color_5;
-      text-decoration: none;
-    }
-    a {
-      color: $color_4;
-    }
-  }
-
-  // Menu movil
-  .menu_mob {
-    display: none;
-  }
-  .side-menu {
-    display: none;
-  }
-  .hamb {
-    display: none;
-  }
-}
-/*fin tablet*/
-
-/* Tamaño pantallas Escritorio inferior (1024)  superior 991*/
-@media all and (min-width: 991px) and (max-width: 1023px) {
-  header {
-    width: 100%;
-    height: 18vh;
-    position: fixed;
-    background-color: $background-color_1;
-    top: 0px;
-    left: 0px;
-    padding: 1%;
-    transition: all 0.5s;
-    z-index: 3;
-    -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
-    box-shadow: 0px 6px 15px 6px #c7c7c731;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .aline {
-    width: 140px;
-    height: 45px;
-    margin-top: 9%;
-    i {
-      margin-left: 7%;
-    }
-  }
-
-  .logo_picture {
-    width: 200px;
-  }
-  .menu_desk {
-    width: 50%;
-    height: 38px;
-    margin-top: 48px;
-    display: flex;
-    justify-content: flex-end;
-
-    a {
-      font-size: 24px;
-      font-weight: 500;
-      margin-right: 28px;
-      color: $color_1;
-      transition: all 0.5s;
-      font-family: $font-family_1;
-      &:hover {
-        color: $color_2;
-      }
-    }
-  }
-  .box_buttons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    button {
       font-size: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: 20px;
-      justify-content: center;
-      align-items: center;
     }
-  }
-  .log-in {
-    width: 70px;
-    height: 20px;
-    background-color: $background-color_2;
-    margin-top: 35px;
-    margin-right: 10px;
-    font-family: $font-family_2;
-    border: none;
-    a {
-      font-size: 20px;
-      color: $color_1;
-      transition: all 0.2s;
-      &:hover {
-        color: $color_3;
-        transition: all 0.2s;
-      }
-    }
-  }
-
-  .main-button {
-    background-image: linear-gradient(
-      to right,
-      #6363d3 0%,
-      #1e287c 51%,
-      #5454ee 100%
-    );
-    text-align: center;
-    font-family: $font-family_2;
-    transition: 0.5s;
-    border-radius: 35px !important;
-    background-size: 200% auto;
-    color: $color_4;
-    display: block;
-    cursor: pointer;
-    border-bottom: 5px solid rgb(148, 138, 243);
-    border-right: 5px solid rgb(148, 138, 243);
-    border-left: 5px solid rgb(148, 138, 243);
-    border-top: 5px solid rgb(148, 138, 243);
-    &:hover {
-      background-position: right center;
-      color: $color_5;
-      text-decoration: none;
-    }
-    a {
-      color: $color_4;
-    }
-  }
-
-  // Menu movil
-  .menu_mob {
-    display: none;
-  }
-  .side-menu {
-    display: none;
-  }
-  .hamb {
-    display: none;
   }
 }
 
 /* Tamaño pantallas Escritorio superior (1024) */
-@media screen and (min-width: 1024px) {
-  header {
-    width: 100%;
-    height: 18vh;
-    position: fixed;
-    background-color: $background-color_1;
-    top: 0px;
-    left: 0px;
-    padding: 1%;
-    transition: all 0.5s;
-    z-index: 3;
-    -webkit-box-shadow: 0px 6px 24px 6px #ece5e5da;
-    box-shadow: 0px 6px 15px 6px #c7c7c731;
-    display: flex;
-    justify-content: space-around;
-  }
-  .aline {
-    width: 140px;
-    height: 45px;
-    margin-top: 9%;
-    i {
-      margin-left: 7%;
-    }
-  }
-
+@media screen and (min-width: 1014px) and (max-width: 1999px) {
   .logo_picture {
-    width: 200px;
+    margin-left: 0;
+    width: 250px;
+  }
+  .hamb {
+    display: none;
   }
   .menu_desk {
-    width: 50%;
-    height: 38px;
-    margin-top: 48px;
-    display: flex;
-    justify-content: flex-end;
-
+    @include menu_desk;
     a {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 500;
-      margin-right: 28px;
+      margin-right: 70px;
       color: $color_1;
       transition: all 0.5s;
       font-family: $font-family_1;
@@ -1126,74 +344,12 @@ header {
   }
   .box_buttons {
     margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    button {
-      font-size: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: 20px;
-      justify-content: center;
-      align-items: center;
-    }
+    align-items: baseline;
+    margin-right: 60px;
   }
   .log-in {
-    width: 70px;
-    height: 20px;
-    background-color: $background-color_2;
-    margin-top: 35px;
-    margin-right: 10px;
-    font-family: $font-family_2;
-    border: none;
     a {
-      font-size: 20px;
-      color: $color_1;
-      transition: all 0.2s;
-      &:hover {
-        color: $color_3;
-        transition: all 0.2s;
-      }
+      font-size: 18px;
     }
-  }
-
-  .main-button {
-    background-image: linear-gradient(
-      to right,
-      #6363d3 0%,
-      #1e287c 51%,
-      #5454ee 100%
-    );
-    text-align: center;
-    font-family: $font-family_2;
-    transition: 0.5s;
-    border-radius: 35px !important;
-    background-size: 200% auto;
-    color: $color_4;
-    display: block;
-    cursor: pointer;
-    border-bottom: 5px solid rgb(148, 138, 243);
-    border-right: 5px solid rgb(148, 138, 243);
-    border-left: 5px solid rgb(148, 138, 243);
-    border-top: 5px solid rgb(148, 138, 243);
-    &:hover {
-      background-position: right center;
-      color: $color_5;
-      text-decoration: none;
-    }
-    a {
-      color: $color_4;
-    }
-  }
-
-  // Menu movil
-  .menu_mob {
-    display: none;
-  }
-  .side-menu {
-    display: none;
-  }
-  .hamb {
-    display: none;
   }
 }
