@@ -12,6 +12,7 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
+import { LibraryComponent } from './pages/library/library.component';
 
 export function playerFactory() {
   return player;
@@ -26,6 +27,7 @@ export function playerFactory() {
     HeaderComponent,
     RegistroComponent,
     LandingComponent,
+    LibraryComponent,
   ],
 
   imports: [

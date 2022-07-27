@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminNtComponent } from './admin-nt.component';
+import { LibraryComponent } from './library.component';
 
-describe('AdminNtComponent', () => {
-  let component: AdminNtComponent;
-  let fixture: ComponentFixture<AdminNtComponent>;
+describe('LibraryComponent', () => {
+  let component: LibraryComponent;
+  let fixture: ComponentFixture<LibraryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminNtComponent ]
+      declarations: [ LibraryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminNtComponent);
+    fixture = TestBed.createComponent(LibraryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
