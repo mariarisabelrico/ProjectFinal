@@ -34,43 +34,43 @@ $background-color_2: rgb(255, 255, 255);
   height: 100%;
   margin-top: 5px;
   background-image: url(../../../assets/img/ILUS3.PNG);
-  background-position: 53% 22%;
-  background-size: 490px;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .info {
-  width: 45%;
+  width: 7em;
   padding: 25px 30px;
   height: 70px;
   background-color: $background-color_1;
-  margin-left: 33%;
+  margin-left: 30%;
   border-radius: 5px;
-  margin-top: 5px;
 }
 .tlt {
   font-size: 18px;
   font-family: $font-family_1;
-  margin-top: 3px;
+  margin-top: -1em;
 }
 .video {
-  width: 100%;
-  height: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
-  margin-top: 5px;
-  background-color: $background-color_2;
+  justify-content: center;
   align-items: center;
+  padding: 1em 0;
+  margin-top: 3em;
+  background-color: $background-color_2;
+  text-align: center;
   iframe {
-    margin-left: 5%;
     border-radius: 5px;
+    text-align: center;
     border: 8px solid rgba(193, 199, 235, 0.863);
   }
 }
+.video-frame {
+  width: 400px;
+  height: auto;
+}
 .redirection {
-  margin-left: 48%;
-  margin-top: 16%;
+  margin-top: 1em;
 }
 
 .main-button {
@@ -107,45 +107,11 @@ $background-color_2: rgb(255, 255, 255);
   height: 45px;
 }
 
-// @media all and (min-width: 479px) and (max-width: 599px) {
-//   .info {
-//     width: 50%;
-//     height: 55px;
-//     padding: 11px 17px;
-//     margin-top: 1%;
-//     margin-left: 28%;
-//   }
-//   .tlt {
-//     font-size: 14px;
-//   }
-//   .container {
-//     height: 77.3vh;
-//     background-position: 72% 17%;
-//     background-size: 250px;
-//   }
-//   .video {
-//     width: 80%;
-//     display: block;
-//     margin-top: 8%;
-//     margin-left: 20%;
-//     iframe {
-//       width: 80%;
-//       height: 150px;
-//       margin-bottom: 12%;
-//     }
-//   }
-//   .redirection {
-//     margin-top: 68%;
-//     margin-left: 42%;
-//   }
-//   .size {
-//     width: 105px;
-//     height: 37px;
-//     a {
-//       font-size: 14px;
-//     }
-//   }
-// }
+@media all and (min-width: 479px) and (max-width: 599px) {
+  .redirection {
+    padding: 1em;
+  }
+}
 
 // @media all and (min-width: 1200px) and (max-width: 1919px) {
 //   .info {

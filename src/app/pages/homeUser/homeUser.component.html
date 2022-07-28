@@ -22,6 +22,7 @@
     </style>
   </div>
 </section>
+
 <section class="container">
   <div class="info">
     <!-- <?php if(!empty($user)): ?> -->
@@ -33,12 +34,13 @@
   </div>
   <div class="redirection">
     <button class="main-button size">
-      <a href="library.php"> Let´s go </a>
+      <a href="http://localhost:4200/Library"> Let´s go </a>
     </button>
   </div>
   <div class="video">
     <iframe
-      width="500"
+      class="video-frame"
+      width="400"
       height="255"
       src="https://www.youtube.com/embed/n1nbEuSFC9E"
       title="YouTube video player"
@@ -47,7 +49,8 @@
       allowfullscreen
     ></iframe>
     <iframe
-      width="500"
+      class="video-frame"
+      width="400"
       height="255"
       src="https://www.youtube.com/embed/Ud1rdaeXENM"
       title="YouTube video player"
@@ -58,8 +61,8 @@
   </div>
 </section>
 
-<div class="logout">
-  <a href="logout.php"> Logout </a>
+<div class="logout main-button size">
+  <a href="http://localhost:4200/"> Logout </a>
 </div>
 <!-- scripts js
 <script src="js/jquery3.js"></script>
