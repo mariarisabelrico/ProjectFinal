@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   login = {
     email: '',
     password: '',
-    token:''
+    
   };
 
   constructor(
@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
     console.log(this.login);
     this.api.sinsin(this.login).subscribe((res: any) => {
       console.log(res);
-      localStorage.setItem('token', res.token);
-      this.router.navigate(['Registro']);
+      localStorage.setItem('token', res);
+      this.router.navigate(['HomeUser']);
     });
   }
 }
