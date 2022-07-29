@@ -16,9 +16,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-sinsin(user:any){
-  return this.http.post(`${this.url}login`,user)
-}
-
-
+  sinsin(user: any) {
+    return this.http.post(`${this.url}login`, user, { responseType: 'text' });
+  }
 }
