@@ -1,12 +1,7 @@
-import { Component, Injectable, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Injectable, OnInit } from '@angular/core';
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, map, throwError } from 'rxjs';
-import { LoginI } from '../../shared/models/login.interface';
-import { ResponseI } from '../../shared/models/response.interface';
-import { catchError } from 'rxjs/operators';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { Observable } from 'rxjs';
+import { User } from 'src/app/shared/models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +13,11 @@ export class ApiService {
 
   sinsin(user: any) {
     return this.http.post(`${this.url}login`, user, { responseType: 'text' });
+  }
+
+
+
+  posrtUser(user: User) {
+    return this.http.post(`${this.url}register`, user,{ responseType: 'text' });
   }
 }
