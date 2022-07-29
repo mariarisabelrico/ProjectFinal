@@ -20,8 +20,14 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   login = {
     email: '',
+<<<<<<< HEAD
     password: ''
   }
+=======
+    password: '',
+    
+  };
+>>>>>>> c59bf376daf4e826afa32b4b9539761b5bcb68ac
 
   constructor(
     private api: ApiService,
@@ -36,7 +42,11 @@ export class LoginComponent implements OnInit {
     this.api.sinsin(this.login).subscribe((res: any) => {
       console.log(res);
       localStorage.setItem('token', res);
+<<<<<<< HEAD
       this.router.navigate(['Registro']);
+=======
+      this.router.navigate(['HomeUser']);
+>>>>>>> c59bf376daf4e826afa32b4b9539761b5bcb68ac
     });
   }
 }
