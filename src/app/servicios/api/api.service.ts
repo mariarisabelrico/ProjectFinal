@@ -16,8 +16,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  loginByEmail(form: LoginI): Observable<ResponseI> {
-    let direcion = this.url + 'login';
-    return this.http.post<ResponseI>(direcion, form);
-  }
+sinsin(user:any){
+  return this.http.post(`${this.url}login`,user)
+}
+
+
 }
