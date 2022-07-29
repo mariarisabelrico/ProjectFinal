@@ -212,42 +212,42 @@ header {
   display: block;
 }
 
-header {
-  padding-inline: 2rem;
-  justify-content: center;
-  align-items: center;
+// header {
+//   padding-inline: 2rem;
+//   justify-content: center;
+//   align-items: center;
 
-  .box_buttons {
-    align-items: center;
+//   .box_buttons {
+//     align-items: center;
 
-    .log-in {
-      margin: 0;
-      display: none;
-    }
+//     .log-in {
+//       margin: 0;
+//       display: none;
+//     }
 
-    .main-button {
-      margin: 0;
-      display: none;
-    }
-  }
-}
+//     .main-button {
+//       margin: 0;
+//       display: none;
+//     }
+//   }
+// }
 
-.hamb {
-  padding: 0px;
-  margin-left: auto;
-  margin-top: 5px;
-}
+// .hamb {
+//   padding: 0px;
+//   margin-left: auto;
+//   margin-top: 5px;
+// }
 
-.logo_picture {
-  margin-left: 0.2em;
-  margin-right: 1em;
-  width: 120px;
-}
+// .logo_picture {
+//   margin-left: 0.2em;
+//   margin-right: 1em;
+//   width: 120px;
+// }
 
-.colored {
-  background: rgb(128, 108, 216);
-  color: $color_4 !important;
-}
+// .colored {
+//   background: rgb(128, 108, 216);
+//   color: $color_4 !important;
+// }
 
 @media (min-width: 360px) and (max-width: 479px) {
   header {
