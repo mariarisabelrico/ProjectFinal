@@ -402,13 +402,14 @@ $background-color_3: white;
 }
 
 // 479
-@media all and (max-width: 479px) {
+@media all and (min-width: 479px) and (max-width: 599px) {
   .s1 {
     flex-direction: column;
     .s1_content {
       padding-block: 3rem;
       flex-direction: column;
       width: 100%;
+      height: auto;
 
       .txt {
         margin-bottom: 0;
