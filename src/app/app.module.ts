@@ -13,6 +13,7 @@ import { HeaderComponent } from './core/components/header/header.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { LibraryComponent } from './pages/library/library.component';
+import {HttpClientModule} from '@angular/common/http'
 
 export function playerFactory() {
   return player;
@@ -36,6 +37,7 @@ export function playerFactory() {
     FontAwesomeModule,
     FormsModule,
     LottieModule.forRoot({ player: playerFactory }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
